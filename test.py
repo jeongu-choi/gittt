@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget, QLabel
+from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget, QLabel, QAbstractItemView
 from PySide6.QtCore import Qt
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
@@ -20,6 +20,7 @@ class MainWindow(QMainWindow):
         self.ui.H_beam.clicked.connect(self.groupboxRadFunction)
         self.ui.I_beam.clicked.connect(self.groupboxRadFunction)
         self.ui.Bridge_Length.returnPressed.connect(self.print_Bridge_Length)
+        self.ui.Load.returnPressed.connect(self.printLoad)
         self.window_2 = None
         self.window_3 = None
 
@@ -38,6 +39,8 @@ class MainWindow(QMainWindow):
             # Label 위젯에 QPixmap 객체를 설정합니다.
             self.label.setPixmap(warren_truss)
 
+
+
     def groupboxRadFunction(self):
         if self.ui.H_beam.isChecked():
             self.window_2 = TableWidgetDemo("your_excel_file.csv", "tableWidget")
@@ -51,16 +54,25 @@ class MainWindow(QMainWindow):
         # Lineedit에 있는 글자를 가져오는 메서드
         print(self.ui.Bridge_Length.text())
 
+    def printLoad(self):
+        print(self.ui.Load.text())
+
 class TableWidgetDemo(QWidget):
     def __init__(self, file_path, table_name):
         super(TableWidgetDemo, self).__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.table_name = table_name
+        self.ui.tableWidget.cellDoubleClicked.connect(self.cell_double_clicked)
+        self.ui.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
         # CSV 파일 읽기
         self.load_csv_data(file_path)
 
+    def cell_double_clicked(self, row, column):
+        item = self.ui.tableWidget.item(row, column)
+        if item:
+            print(f"Double clicked on cell ({row}, {column}) with value: {item.text()}")
 
     def load_csv_data(self, file_path):
         try:
@@ -95,10 +107,16 @@ class TableWidgetDemo_2(QWidget):
         self.ui = Ui_Form_2()
         self.ui.setupUi(self)
         self.table_name = table_name
+        self.ui.tableWidget_2.cellDoubleClicked.connect(self.cell_double_clicked)
+        self.ui.tableWidget_2.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
         # CSV 파일 읽기
         self.load_csv_data_2(file_path)
 
+    def cell_double_clicked(self, row, column):
+        item = self.ui.tableWidget_2.item(row, column)
+        if item:
+            print(f"Double clicked on cell ({row}, {column}) with value: {item.text()}")
 
     def load_csv_data_2(self, file_path):
         try:

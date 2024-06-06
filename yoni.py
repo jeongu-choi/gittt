@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'yonizwYWch.ui'
+## Form generated from reading UI file 'yoniuHxiop.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -25,8 +25,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(765, 600)
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet(u"background:rgb(255, 255, 255);\n"
-"borderstyle: 'dashed'")
+        MainWindow.setStyleSheet(u"background:rgb(255, 255, 255);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.H_beam = QRadioButton(self.centralwidget)
@@ -54,7 +53,7 @@ class Ui_MainWindow(object):
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(110, 140, 91, 41))
-        self.label_2.setStyleSheet(u"border: 3px dashed rgb(106, 76, 255);\n"
+        self.label_2.setStyleSheet(u"\n"
 "font : 15pt ;\n"
 "color : black;\n"
 "")
@@ -67,7 +66,7 @@ class Ui_MainWindow(object):
 "font-weight: bold")
         self.Load = QLineEdit(self.centralwidget)
         self.Load.setObjectName(u"Load")
-        self.Load.setGeometry(QRect(210, 210, 531, 41))
+        self.Load.setGeometry(QRect(210, 140, 531, 41))
         self.Load.setStyleSheet(u"background-color: rgb(208, 208, 208);\n"
 "font : 10pt ;\n"
 "color : black")
@@ -75,13 +74,13 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(110, 220, 91, 31))
-        self.label.setStyleSheet(u"border: 3px dashed rgb(106, 76, 255);\n"
+        self.label.setStyleSheet(u"\n"
 "font : 15pt ;\n"
 "color : black")
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.Bridge_Length = QLineEdit(self.centralwidget)
         self.Bridge_Length.setObjectName(u"Bridge_Length")
-        self.Bridge_Length.setGeometry(QRect(210, 140, 531, 41))
+        self.Bridge_Length.setGeometry(QRect(210, 210, 531, 41))
         self.Bridge_Length.setStyleSheet(u"background-color: rgb(208, 208, 208);\n"
 "font : 10pt ;\n"
 "color : black")
