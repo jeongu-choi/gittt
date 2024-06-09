@@ -1,8 +1,8 @@
 import sys
 import pandas as pd
-from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget, QLabel, QAbstractItemView
-from PySide6.QtCore import Qt
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget, QLabel, QAbstractItemView, QStyledItemDelegate
+from PySide6.QtCore import Qt, QPoint, QRect
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QPen,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
@@ -10,6 +10,7 @@ from yoni import Ui_MainWindow  # 생성된 파이썬 파일의 이름에 따라
 from PySide6.QtUiTools import QUiLoader
 from secondwindow import Ui_Form
 from third import Ui_Form_2
+from simple_truss_test import inside_information
 import string
 
 class MainWindow(QMainWindow):
@@ -21,8 +22,10 @@ class MainWindow(QMainWindow):
         self.ui.I_beam.clicked.connect(self.groupboxRadFunction)
         self.ui.Bridge_Length.returnPressed.connect(self.print_Bridge_Length)
         self.ui.Load.returnPressed.connect(self.printLoad)
+        self.ui.Bridge_Height.returnPressed.connect(self.print_Bridge_Height())
         self.window_2 = None
         self.window_3 = None
+        self.beam_choice = None
 
         # 'label'이라는 객체 이름을 가진 Label 위젯을 찾습니다.
         self.label = self.ui.pixmap
@@ -35,27 +38,37 @@ class MainWindow(QMainWindow):
         self.label = self.ui.warren_truss
         if self.label:
             # QPixmap 객체를 생성하고 이미지 파일을 로드합니다.
-            warren_truss = QPixmap(r"C:\Users\chjw5\PycharmProjects\가상\double_warren.png")
+            warren_truss = QPixmap(r"C:\Users\chjw5\PycharmProjects\가상\triangle.jpg")
             # Label 위젯에 QPixmap 객체를 설정합니다.
             self.label.setPixmap(warren_truss)
 
-
-
     def groupboxRadFunction(self):
         if self.ui.H_beam.isChecked():
+            self.beam_choice = 'H_beam'
+            print(self.beam_choice)
+
             self.window_2 = TableWidgetDemo("your_excel_file.csv", "tableWidget")
             self.window_2.show()
 
         elif self.ui.I_beam.isChecked():
+            self.beam_choice = 'I_beam'
+            print(self.beam_choice)
+
             self.window_3 = TableWidgetDemo_2("I_beam.csv", "tableWidget_2")
             self.window_3.show()
 
     def print_Bridge_Length(self):
         # Lineedit에 있는 글자를 가져오는 메서드
-        print(self.ui.Bridge_Length.text())
+        Bridge_Length = (self.ui.Bridge_Length.text())
+
+        #print(Bridge_Length)
 
     def printLoad(self):
-        print(self.ui.Load.text())
+        Load = (self.ui.Load.text())
+        #print(Load)
+
+    def print_Bridge_Height(self):
+        Bridge_Height = (self.ui.Bridge_Height.text())
 
 class TableWidgetDemo(QWidget):
     def __init__(self, file_path, table_name):
@@ -72,7 +85,8 @@ class TableWidgetDemo(QWidget):
     def cell_double_clicked(self, row, column):
         item = self.ui.tableWidget.item(row, column)
         if item:
-            print(f"Double clicked on cell ({row}, {column}) with value: {item.text()}")
+            H_Cell = item.text()  # 더블클릭한 셀의 값을 H_Cell 변수에 저장
+            #print(H_Cell)  # H_Cell 변수의 값을 출력
 
     def load_csv_data(self, file_path):
         try:
@@ -116,7 +130,8 @@ class TableWidgetDemo_2(QWidget):
     def cell_double_clicked(self, row, column):
         item = self.ui.tableWidget_2.item(row, column)
         if item:
-            print(f"Double clicked on cell ({row}, {column}) with value: {item.text()}")
+            I_Cell = item.text()  # 더블클릭한 셀의 값을 I_Cell 변수에 저장
+            #print(I_Cell)  # I_Cell 변수의 값을 출력
 
     def load_csv_data_2(self, file_path):
         try:
@@ -144,8 +159,6 @@ class TableWidgetDemo_2(QWidget):
 
         except Exception as e:
             print(f"Error loading CSV file: {e}")
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
