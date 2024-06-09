@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>384</width>
-    <height>211</height>
+    <height>651</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>I_beam_table</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>mushroom.jpg</normaloff>mushroom.jpg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background:rgb(255, 255, 255);</string>
@@ -22,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>151</width>
-     <height>211</height>
+     <height>651</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -35,7 +39,7 @@
      <x>150</x>
      <y>0</y>
      <width>231</width>
-     <height>211</height>
+     <height>651</height>
     </rect>
    </property>
    <property name="styleSheet">

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'secondwindowhxqkWE.ui'
+## Form generated from reading UI file 'secondwindowFaaUsE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -22,15 +22,18 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(383, 212)
+        Form.resize(383, 650)
+        icon = QIcon()
+        icon.addFile(u"gost.jpg", QSize(), QIcon.Normal, QIcon.Off)
+        Form.setWindowIcon(icon)
         Form.setStyleSheet(u"background:rgb(255, 255, 255);")
         self.tableWidget = QTableWidget(Form)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(0, 0, 151, 211))
+        self.tableWidget.setGeometry(QRect(0, 0, 151, 651))
         self.tableWidget.setStyleSheet(u"background:rgb(173, 173, 173)")
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(150, 0, 231, 211))
+        self.label.setGeometry(QRect(150, 0, 231, 651))
         self.label.setStyleSheet(u"border: 3px dashed rgb(255, 0, 0);\n"
 "font : 15pt ;\n"
 "color : black;\n"
@@ -42,7 +45,7 @@ class Ui_Form(object):
     # setupUi
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"H_beam_table", None))
         self.label.setText(QCoreApplication.translate("Form", u"\uc140\uc744 \ub354\ube14\ud074\ub9ad \ud558\uc138\uc694!", None))
     # retranslateUi
 
