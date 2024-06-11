@@ -1,25 +1,15 @@
-from test import Main_truss, h_truss, i_truss
-
-
 import numpy as np
 import pandas as pd
 
 #먼저 UI에서 교량의 총 길이, 하중, 교량의 높이, 부재의 종류를 받을 거임. 이게 인풋정보
 # 인사이드 정보는 내부에서 계산하기 위해 사용할 정보
-#Bridge_Length = int(input('교량 총 길이(m) :')) # UI가 없기때문에 일단 대충 만듬
-#Bridge_Height = int(input('교량 높이(m) :'))
-#Load = float(input('교량이 받는 하중(kN/m) :'))
-#I_Cell = input('I빔의 H*B 값 :')
-#H_Cell = input('H빔의 H*B 값 :')
+Bridge_Length = int(input('교량 총 길이(m) :')) # UI가 없기때문에 일단 대충 만듬
+Bridge_Height = int(input('교량 높이(m) :'))
+Load = float(input('교량이 받는 하중(kN/m) :'))
+I_Cell = input('I빔의 H*B 값 :')
+H_Cell = input('H빔의 H*B 값 :')
 
-Bridge_Height = int(Main_truss.Bridge_Height)
-Bridge_Length = int(Main_truss.Bridge_Length)
-Load = float(Main_truss.Load)
-I_Cell = i_truss.I_Cell
-H_Cell = h_truss.H_Cell
-
-
-class inside_information :
+class inside_information() :
     def __init__(self):
         self.nodes_coordinates = np.empty((0, 2), dtype=float) # 절점 좌표 2차원 초기화 안하고 그냥 배열만 한다 np.empty(), 배열할 때마다 초기화하고 싶으면 np.zeros(), np.ones()m, np.full() 사용
         self.nodes_dof = np.empty((0, 2), dtype=float) # 절점 자유도 2차원
@@ -37,8 +27,7 @@ class inside_information :
         self.I_beam_area = None
         self.H_beam_area = None
         self.nodes_iDOF = np.empty((0, 2), dtype=float)
-        self.beam_choice = Main_truss.beam_choice
-
+        self.beam_choice = 'H_beam'
 
     def add_nodes_coordinates(self): #문제 없음
         if self.num_of_bottom_members == 1 :
@@ -102,8 +91,8 @@ class inside_information :
 
     def material_properties(self):
         # 이 함수 호출하기 전에 중간부재 길이도 알아야하고 중간 부재 길이를 알려면 절점이 2개
-        I_beam_path = r"C:\Users\chjw5\PycharmProjects\가상\I_beam_new.csv"
-        H_beam_path = r"C:\Users\chjw5\PycharmProjects\가상\H_beam_new.csv"
+        I_beam_path = 'C:\\Users\\sooha\\PycharmProjects\\가상환경\\I-beam.csv'
+        H_beam_path = 'C:\\Users\\sooha\\PycharmProjects\\가상환경\\H-beam.csv'
 
         I_beam_data = pd.read_csv(I_beam_path, encoding='cp949')
         H_beam_data = pd.read_csv(H_beam_path, encoding='cp949')
@@ -180,8 +169,6 @@ class inside_information :
                         if distance <= max_length:
                             element_iDOF = list(self.nodes_iDOF[i]) + list(self.nodes_iDOF[j])
                             self.elements = np.vstack([self.elements, element_iDOF])
-
-
 
 
 

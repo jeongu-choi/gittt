@@ -1,4 +1,4 @@
-from test import Main_truss, h_truss, i_truss
+#from test import MainWindow, TableWidgetDemo_2, TableWidgetDemo
 
 
 import numpy as np
@@ -12,14 +12,14 @@ import pandas as pd
 #I_Cell = input('I빔의 H*B 값 :')
 #H_Cell = input('H빔의 H*B 값 :')
 
-Bridge_Height = int(Main_truss.Bridge_Height)
-Bridge_Length = int(Main_truss.Bridge_Length)
-Load = float(Main_truss.Load)
-I_Cell = i_truss.I_Cell
-H_Cell = h_truss.H_Cell
+#Bridge_Length = int(input('교량 총 길이(m) :')) # UI가 없기때문에 일단 대충 만듬
+#Bridge_Height = int(input('교량 높이(m) :'))
+#Load = float(input('교량이 받는 하중(kN/m) :'))
+#I_Cell = input('I빔의 H*B 값 :')
+#H_Cell = input('H빔의 H*B 값 :')
 
 
-class inside_information :
+class inside_information() :
     def __init__(self):
         self.nodes_coordinates = np.empty((0, 2), dtype=float) # 절점 좌표 2차원 초기화 안하고 그냥 배열만 한다 np.empty(), 배열할 때마다 초기화하고 싶으면 np.zeros(), np.ones()m, np.full() 사용
         self.nodes_dof = np.empty((0, 2), dtype=float) # 절점 자유도 2차원
@@ -37,7 +37,7 @@ class inside_information :
         self.I_beam_area = None
         self.H_beam_area = None
         self.nodes_iDOF = np.empty((0, 2), dtype=float)
-        self.beam_choice = Main_truss.beam_choice
+        self.beam_choice = globals(beam_choice)
 
 
     def add_nodes_coordinates(self): #문제 없음

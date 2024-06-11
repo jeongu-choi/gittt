@@ -17,8 +17,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QSizePolicy,
     QTableWidget, QTableWidgetItem, QWidget)
+from PyQt5 import uic
 
-class Ui_Form_2(object):
+form_class = uic.loadUiType("third.ui")[0]
+
+class Ui_Form_2(form_class):
     def setupUi(self, Form_2):
         if not Form_2.objectName():
             Form_2.setObjectName(u"Form_2")

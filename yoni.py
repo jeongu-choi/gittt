@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'yoniMWUPKL.ui'
-##
-## Created by: Qt User Interface Compiler version 6.7.0
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -17,14 +7,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QMenuBar, QRadioButton, QSizePolicy, QStatusBar,
-    QWidget)
+    QPushButton, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1920, 1280)
-        icon = QIcon()
+        icon = QIcon()  # 이제 QIcon을 사용할 수 있습니다.
         icon.addFile(u"cloud.jpg", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setAutoFillBackground(False)
@@ -70,7 +60,7 @@ class Ui_MainWindow(object):
 "")
         self.Load = QLineEdit(self.centralwidget)
         self.Load.setObjectName(u"Load")
-        self.Load.setGeometry(QRect(500, 300, 531, 41))
+        self.Load.setGeometry(QRect(500, 430, 531, 41))
         self.Load.setStyleSheet(u"background-color: rgb(222, 222, 222);\n"
 "font : 10pt ;\n"
 "color : black")
@@ -84,7 +74,7 @@ class Ui_MainWindow(object):
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.Bridge_Length = QLineEdit(self.centralwidget)
         self.Bridge_Length.setObjectName(u"Bridge_Length")
-        self.Bridge_Length.setGeometry(QRect(500, 440, 531, 41))
+        self.Bridge_Length.setGeometry(QRect(500, 300, 531, 41))
         self.Bridge_Length.setStyleSheet(u"background-color: rgb(222, 222, 222);\n"
 "font : 10pt ;\n"
 "color : black")
@@ -148,11 +138,21 @@ class Ui_MainWindow(object):
 "")
         self.Bridge_Height = QLineEdit(self.centralwidget)
         self.Bridge_Height.setObjectName(u"Bridge_Height")
-        self.Bridge_Height.setGeometry(QRect(500, 370, 531, 41))
+        self.Bridge_Height.setGeometry(QRect(500, 360, 531, 41))
         self.Bridge_Height.setStyleSheet(u"background-color: rgb(222, 222, 222);\n"
 "font : 10pt ;\n"
 "color : black")
         self.Bridge_Height.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+
+        # calculate_button 추가
+        self.calculate_button = QPushButton(self.centralwidget)
+        self.calculate_button.setObjectName(u"calculate_button")
+        self.calculate_button.setGeometry(QRect(500, 750, 200, 50))
+        self.calculate_button.setText("Calculate")
+        self.calculate_button.setStyleSheet(u"background-color: rgb(222, 222, 222);\n"
+"font : 10pt ;\n"
+"color : black")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.warren_truss.raise_()
         self.label_12.raise_()
@@ -168,6 +168,7 @@ class Ui_MainWindow(object):
         self.label_7.raise_()
         self.label_3.raise_()
         self.Bridge_Height.raise_()
+        self.calculate_button.raise_()
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 1920, 33))
@@ -179,23 +180,17 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\uc708\ub3c4\uc6b0\ub2e4", None))
-        self.H_beam.setText(QCoreApplication.translate("MainWindow", u" H \ube54", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\uad50\ub7c9\uae38\uc774", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\ubd80\uc7ac\uc885\ub958", None))
-        self.Load.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\ud558\uc911", None))
-        self.Bridge_Length.setText("")
-        self.I_beam.setText(QCoreApplication.translate("MainWindow", u" I \ube54", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"윈도우다", None))
+        self.H_beam.setText(QCoreApplication.translate("MainWindow", u" H 빔", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"교량길이", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"부재종류", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"하중", None))
+        self.I_beam.setText(QCoreApplication.translate("MainWindow", u" I 빔", None))
         self.pixmap.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"IC-PBL", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Truss \uad6c\uc870\uc124\uacc4", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Truss 구조설계", None))
         self.warren_truss.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\uad50\ub7c9\ub192\uc774", None))
-        self.Bridge_Height.setText("")
-    # retranslateUi
-
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"교량높이", None))
