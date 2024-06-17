@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'thirdRUCbZU.ui'
+## Form generated from reading UI file 'thirdeldToZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -17,26 +17,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QSizePolicy,
     QTableWidget, QTableWidgetItem, QWidget)
-from PyQt5 import uic
 
-form_class = uic.loadUiType("third.ui")[0]
-
-class Ui_Form_2(form_class):
+class Ui_Form_2(object):
     def setupUi(self, Form_2):
         if not Form_2.objectName():
             Form_2.setObjectName(u"Form_2")
-        Form_2.resize(384, 651)
+        Form_2.resize(419, 651)
         icon = QIcon()
         icon.addFile(u"mushroom.jpg", QSize(), QIcon.Normal, QIcon.Off)
         Form_2.setWindowIcon(icon)
         Form_2.setStyleSheet(u"background:rgb(255, 255, 255);")
         self.tableWidget_2 = QTableWidget(Form_2)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
-        self.tableWidget_2.setGeometry(QRect(0, 0, 151, 651))
+        self.tableWidget_2.setGeometry(QRect(0, 0, 181, 651))
         self.tableWidget_2.setStyleSheet(u"background:rgb(173, 173, 173)")
         self.label = QLabel(Form_2)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(150, 0, 231, 651))
+        self.label.setGeometry(QRect(180, 0, 231, 651))
         self.label.setStyleSheet(u"border: 3px dashed rgb(255, 0, 0);\n"
 "font : 15pt ;\n"
 "color : black;\n"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'secondwindowFaaUsE.ui'
+## Form generated from reading UI file 'secondwindowgePQIA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -17,11 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHeaderView, QLabel, QSizePolicy,
     QTableWidget, QTableWidgetItem, QWidget)
-from PyQt5 import uic
 
-form_class = uic.loadUiType("secondwindow.ui")[0]
-
-class Ui_Form(form_class):
+class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")

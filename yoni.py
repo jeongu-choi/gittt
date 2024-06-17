@@ -7,7 +7,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
     QMenuBar, QRadioButton, QSizePolicy, QStatusBar,
-    QPushButton, QWidget)
+    QPushButton, QWidget, QComboBox, QDialog, QVBoxLayout, QDialogButtonBox)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -37,9 +37,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QRadioButton {\n"
-"    color: black; /* \ud14d\uc2a4\ud2b8 \uc0c9\uc0c1 \ubcc0\uacbd */\n"
-"    background: none; /* \ubc30\uacbd\uc0c9 \uc81c\uac70 */\n"
-"    border: none; /* \ud14c\ub450\ub9ac \uc81c\uac70 */\n"
+"    color: black; /* 텍스트 색상 변경 */\n"
+"    background: none; /* 배경색 제거 */\n"
+"    border: none; /* 테두리 제거 */\n"
 "}\n"
 "background-color: transparent;\n"
 "")
@@ -53,7 +53,7 @@ class Ui_MainWindow(object):
 "")
         self.label_5 = QLabel(self.centralwidget)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(240, 540, 81, 21))
+        self.label_5.setGeometry(QRect(560, 490, 81, 21))
         self.label_5.setStyleSheet(u"background-color: transparent;\n"
 "font : 15pt ;\n"
 "color : black;\n"
@@ -95,9 +95,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QRadioButton {\n"
-"    color: black; /* \ud14d\uc2a4\ud2b8 \uc0c9\uc0c1 \ubcc0\uacbd */\n"
-"    background: none; /* \ubc30\uacbd\uc0c9 \uc81c\uac70 */\n"
-"    border: none; /* \ud14c\ub450\ub9ac \uc81c\uac70 */\n"
+"    color: black; /* 텍스트 색상 변경 */\n"
+"    background: none; /* 배경색 제거 */\n"
+"    border: none; /* 테두리 제거 */\n"
 "}\n"
 "background-color: transparent;")
         self.I_beam.setChecked(True)
@@ -108,14 +108,14 @@ class Ui_MainWindow(object):
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(10, 10, 151, 61))
-        self.label_6.setStyleSheet(u"font: 18pt \"\ub9d1\uc740 \uace0\ub515\";\n"
+        self.label_6.setStyleSheet(u"font: 18pt \"맑은 고딕\";\n"
 "color:black;\n"
 "border: 3px solid rgb(0, 0, 0)")
         self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_7 = QLabel(self.centralwidget)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(500, 160, 531, 61))
-        self.label_7.setStyleSheet(u"font: 26pt \"\ub9d1\uc740 \uace0\ub515\";\n"
+        self.label_7.setStyleSheet(u"font: 26pt \"맑은 고딕\";\n"
 "color:black;\n"
 "background-color: transparent;\n"
 "font-weight: bold")
@@ -147,9 +147,28 @@ class Ui_MainWindow(object):
         # calculate_button 추가
         self.calculate_button = QPushButton(self.centralwidget)
         self.calculate_button.setObjectName(u"calculate_button")
-        self.calculate_button.setGeometry(QRect(500, 750, 200, 50))
+        self.calculate_button.setGeometry(QRect(630, 800, 200, 50))
         self.calculate_button.setText("Calculate")
         self.calculate_button.setStyleSheet(u"background-color: rgb(222, 222, 222);\n"
+"font : 13pt ;\n"
+"color : black")
+
+        # '종류의 기호' Label 추가
+        self.symbol_label = QLabel(self.centralwidget)
+        self.symbol_label.setObjectName(u"symbol_label")
+        self.symbol_label.setGeometry(QRect(770, 485, 200, 30))
+        self.symbol_label.setText("종류의 기호")
+        self.symbol_label.setStyleSheet(u"background-color: transparent;\n"
+"font : 15pt ;\n"
+"color : black;\n"
+"")
+
+        # 종류의 기호 다이얼로그 추가
+        self.symbol_dialog = QComboBox(self.centralwidget)
+        self.symbol_dialog.setObjectName(u"symbol_dialog")
+        self.symbol_dialog.setGeometry(QRect(770, 530, 200, 30))
+        self.symbol_dialog.addItems(["SS235", "SS275", "SS315", "SS410", "SS450", "SS550"])
+        self.symbol_dialog.setStyleSheet(u"background-color: rgb(222, 222, 222);\n"
 "font : 10pt ;\n"
 "color : black")
 
@@ -169,6 +188,8 @@ class Ui_MainWindow(object):
         self.label_3.raise_()
         self.Bridge_Height.raise_()
         self.calculate_button.raise_()
+        self.symbol_label.raise_()
+        self.symbol_dialog.raise_()
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 1920, 33))
@@ -194,3 +215,11 @@ class Ui_MainWindow(object):
         self.warren_truss.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"교량높이", None))
+        self.calculate_button.setText(QCoreApplication.translate("MainWindow", u"계산", None))
+        self.symbol_dialog.setItemText(0, QCoreApplication.translate("MainWindow", u"SS235", None))
+        self.symbol_dialog.setItemText(1, QCoreApplication.translate("MainWindow", u"SS275", None))
+        self.symbol_dialog.setItemText(2, QCoreApplication.translate("MainWindow", u"SS315", None))
+        self.symbol_dialog.setItemText(3, QCoreApplication.translate("MainWindow", u"SS410", None))
+        self.symbol_dialog.setItemText(4, QCoreApplication.translate("MainWindow", u"SS450", None))
+        self.symbol_dialog.setItemText(5, QCoreApplication.translate("MainWindow", u"SS550", None))
+        self.symbol_label.setText(QCoreApplication.translate("MainWindow", u"종류의 기호", None))

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_2</class>
+ <widget class="QWidget" name="Form_2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>384</width>
+    <height>651</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>I_beam_table</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>mushroom.jpg</normaloff>mushroom.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>151</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(173, 173, 173)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>0</y>
+     <width>231</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 3px dashed rgb(255, 0, 0);
+font : 15pt ;
+color : black;
+</string>
+   </property>
+   <property name="text">
+    <string>셀을 더블클릭 하세요!</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

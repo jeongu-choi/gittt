@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1280</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>윈도우다</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>cloud.jpg</normaloff>cloud.jpg</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QRadioButton" name="H_beam">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>540</y>
+      <width>56</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton::indicator {
+    background-color: lightblue;
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+}
+
+QRadioButton::indicator:checked {
+    background-color: black;
+}
+
+QRadioButton {
+    color: black; /* 텍스트 색상 변경 */
+    background: none; /* 배경색 제거 */
+    border: none; /* 테두리 제거 */
+}
+background-color: transparent;
+</string>
+    </property>
+    <property name="text">
+     <string> H 빔</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>300</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+font : 15pt ;
+color : black;
+</string>
+    </property>
+    <property name="text">
+     <string>교량길이</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>490</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+font : 15pt ;
+color : black;
+</string>
+    </property>
+    <property name="text">
+     <string>부재종류</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Load">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>430</y>
+      <width>531</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(222, 222, 222);
+font : 10pt ;
+color : black</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>440</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+font : 15pt ;
+color : black</string>
+    </property>
+    <property name="text">
+     <string>하중</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Bridge_Length">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>300</y>
+      <width>531</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(222, 222, 222);
+font : 10pt ;
+color : black</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="I_beam">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>540</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton::indicator {
+    background-color: lightblue;
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+}
+
+QRadioButton::indicator:checked {
+    background-color: green;
+}
+
+QRadioButton {
+    color: black; /* 텍스트 색상 변경 */
+    background: none; /* 배경색 제거 */
+    border: none; /* 테두리 제거 */
+}
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string> I 빔</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pixmap">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>560</y>
+      <width>181</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;맑은 고딕&quot;;
+color:black;
+border: 3px solid rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string>IC-PBL</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>160</y>
+      <width>531</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 26pt &quot;맑은 고딕&quot;;
+color:black;
+background-color: transparent;
+font-weight: bold</string>
+    </property>
+    <property name="text">
+     <string>Truss 구조설계</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="warren_truss">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-160</y>
+      <width>1920</width>
+      <height>1280</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1920</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>530</y>
+      <width>211</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border: 3px dashed rgb(0, 0, 0)</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>370</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+font : 15pt ;
+color : black;
+</string>
+    </property>
+    <property name="text">
+     <string>교량높이</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Bridge_Height">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>360</y>
+      <width>531</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(222, 222, 222);
+font : 10pt ;
+color : black</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <zorder>warren_truss</zorder>
+   <zorder>label_12</zorder>
+   <zorder>H_beam</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_5</zorder>
+   <zorder>Load</zorder>
+   <zorder>label</zorder>
+   <zorder>Bridge_Length</zorder>
+   <zorder>I_beam</zorder>
+   <zorder>pixmap</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_3</zorder>
+   <zorder>Bridge_Height</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1920</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

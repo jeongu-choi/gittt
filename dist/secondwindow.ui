@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>383</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>H_beam_table</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>gost.jpg</normaloff>gost.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>151</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(173, 173, 173)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>0</y>
+     <width>231</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 3px dashed rgb(255, 0, 0);
+font : 15pt ;
+color : black;
+</string>
+   </property>
+   <property name="text">
+    <string>셀을 더블클릭 하세요!</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
